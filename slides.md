@@ -30,7 +30,7 @@
    * datum
 
  * measuring longitude
-   * measuring latitude is easy(ish): angle to Polaris or sun at noon on Equinox
+   * measuring latitude is easy(ish): angle to Polaris or sun at noon on Equinox (this gives you astronomical latitude, not geodedic, geocentric, or reduced ellipsoidal latitude)
    * measuring longitude requires a reference point: prime meridian (one degree for every 4 minutes diff in noon)
 
  * Geographic Coordinate System (GCS)
@@ -98,6 +98,12 @@
    * compare formulas for sphere and ellipsoid
    * cartographers, geodesy folks, standards bodies hate it
    * everybody uses it
+
+ * An aside on latitude (see https://en.wikipedia.org/wiki/Latitude#Latitude_and_coordinate_systems)
+   * astronomical latitude (angle between zenith and known declination of a star)
+   * geodedic latitude - almost the same as astronomical latitude except that gravitational and centrifugal acceleration make true vertical different from normal to reference ellipsoid
+   * spherical polar latitude - compliment of polar angle θ
+   * ellipsoidal latitude - construct the ellipse intersecting P that is confocal to the reference ellipsoid ...
 
  * Web mapping
    * rendering arbitrary bbox on demand - slow
