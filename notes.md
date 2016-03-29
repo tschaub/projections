@@ -35,7 +35,6 @@ Developable surfaces (graphics from report.pdf fig 1):
  * tangent
  * secant
 
-
 ## Datum
 
  * spheroid

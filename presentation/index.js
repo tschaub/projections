@@ -23,6 +23,7 @@ const images = {
   developable: require('../assets/developable.jpg'),
   surfaces: require('../assets/surfaces.png'),
   secant: require('../assets/secant.png'),
+  centralCylindrical: require('../assets/central-cylindrical.png'),
   plumb: require('../assets/plumb.jpg'),
   geodetic: require('../assets/geodetic-latitude.png'),
   geocentric: require('../assets/geocentric-latitude.png')
@@ -86,7 +87,7 @@ export default class Presentation extends React.Component {
             <Image src={images.sphere.replace('/', '')}/>
           </Slide>
 
-          <Slide>
+          <Slide notes="Newton postulated that the earth was ellipsoidal.  The french thought it was shaped like an egg.  Meridian surveys were unleashed.">
             <Heading size={1}>
               18th century surveyors noticed problems
             </Heading>
@@ -120,8 +121,8 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading padding={20} size={3} textColor="white">Key concepts for terrestrial measurements</Heading>
-            <Appear><Text padding={10} textColor="white">a <strong>spheroid</strong> approximates the geoid,</Text></Appear>
             <Appear><Text padding={10} textColor="white">the <strong>geoid</strong> represents a surface of equal gravity potential,</Text></Appear>
+            <Appear><Text padding={10} textColor="white">a <strong>spheroid</strong> approximates the geoid,</Text></Appear>
             <Appear><Text padding={10} textColor="white">and a <strong>datum</strong> includes spheroid, orientation, and any local variations</Text></Appear>
           </Slide>
 
@@ -202,6 +203,19 @@ export default class Presentation extends React.Component {
 
           <Slide bgColor="white">
             <Image src={images.secant.replace('/', '')} width="95%"/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Layout>
+              <Fill>
+                <Heading margin={20} size={2} textColor="primary">
+                  not a useful projection
+                </Heading>
+              </Fill>
+              <Fill>
+                <Image src={images.centralCylindrical.replace('/', '')}/>
+              </Fill>
+            </Layout>
           </Slide>
 
           <Slide bgColor="white">
