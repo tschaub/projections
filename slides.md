@@ -3,9 +3,9 @@
    * earth was flat
    * so were maps
 
- * round discovered
-   * assumed perfect sphere
+ * Eratosthenes
    * maps got hard
+   * assumed perfect sphere
 
  * 18th century surveyors noticed problems
    * earth recognized as imperfect sphere
@@ -30,7 +30,7 @@
    * datum
 
  * measuring longitude
-   * measuring latitude is easy(ish): angle to Polaris or sun at noon on Equinox (this gives you astronomical latitude, not geodedic, geocentric, or reduced ellipsoidal latitude)
+   * measuring latitude is easy(ish): angle to Polaris or sun at noon on Equinox (this gives you astronomical latitude, not geodedic or geocentric)
    * measuring longitude requires a reference point: prime meridian (one degree for every 4 minutes diff in noon)
 
  * Geographic Coordinate System (GCS)
@@ -53,6 +53,17 @@
    * conic
    * planar
 
+ * Tangent or secant
+   * lines of true scale
+   * plot scale versus latitude
+   * Tissot's indicatrix
+
+ * Geometric cylindrical (not practical)
+
+   * x = r λ cos ψ1
+   * y = r tan ψ
+
+
  * Characteristics intended to preserve one or more of area, shape, direction/bearing, distance, and scale:
 
    * conformal
@@ -60,13 +71,6 @@
    * equidistant
    * gnomic
    * azimuthal
-
- * Tangent or secant
-   * lines of true scale (scale gradient is zero)
-   * plot scale versus latitude
-   * Tissot's indicatrix
-
- * Geometric cylindrical (not practical)
 
  * Equirectangular
 
@@ -115,6 +119,8 @@
    * everybody loves them
 
  * But not all tiles have to be Web Mercator
+
+ * Non-Pseudo-Mercator examples
 
  * Reprojection examples
 

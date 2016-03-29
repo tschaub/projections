@@ -54,10 +54,10 @@ A.k.a equidistant cylindrical projection, geographic projection, or la carte par
 
 Ptolemy claims that Marinus of Tyre invented the projection in 100 AD.  Maps meridians to vertical straight lines of constant spacing and circles of latitude to horizontal straight lines of constant spacing.
 
-    x = λ cos φ1
-    y = φ
+    x = λ cos ψ1
+    y = ψ
 
-Where φ1 are standard parallels (north and south) where the scale of the projection is true.  Plate carrée (square plate) is special case where φ1 is zero.
+Where ψ1 are standard parallels (north and south) where the scale of the projection is true.  Plate carrée (square plate) is special case where ψ1 is zero.
 
 
 ### Mercator
