@@ -58,11 +58,14 @@
    * plot scale versus latitude
    * Tissot's indicatrix
 
- * Geometric cylindrical (not practical)
+ * Central cylindrical (not practical)
+   * x = λ cos ψ1
+   * y = tan ψ
+   * serves no practical purpose
 
-   * x = r λ cos ψ1
-   * y = r tan ψ
-
+ * Equirectangular
+   * x = λ cos ψ1
+   * y = ψ
 
  * Characteristics intended to preserve one or more of area, shape, direction/bearing, distance, and scale:
 
@@ -71,8 +74,6 @@
    * equidistant
    * gnomic
    * azimuthal
-
- * Equirectangular
 
  * Mercator
 
