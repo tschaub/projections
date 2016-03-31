@@ -1,6 +1,9 @@
 import React from 'react';
 import Equirectangular from './equirectangular';
 import CentralCylindrical from './central-cylindrical';
+import GallPeters from './gall-peters';
+import Mercator from './mercator';
+import Winkel from './winkel';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
 import {
@@ -13,25 +16,35 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 const images = {
-  flatEarth: require('../assets/flat-earth.jpg'),
-  eratosthenes: require('../assets/eratosthenes.jpg'),
-  syene: require('../assets/syene.jpg'),
-  circumference: require('../assets/circumference.jpg'),
-  sphere: require('../assets/sphere.png'),
-  triangulation: require('../assets/triangulation.jpg'),
-  clarke: require('../assets/clarke.jpg'),
-  ellipsoid: require('../assets/ellipsoid.png'),
-  geoid: require('../assets/gravity-anomalies.png'),
-  sextant: require('../assets/sextant.jpg'),
-  greenwich: require('../assets/greenwich.jpg'),
-  developable: require('../assets/developable.jpg'),
-  surfaces: require('../assets/surfaces.png'),
-  secant: require('../assets/secant.png'),
+  badRap: require('../assets/bad-rap.png'),
   centralCylindrical: require('../assets/central-cylindrical.png'),
-  plumb: require('../assets/plumb.jpg'),
+  circumference: require('../assets/circumference.jpg'),
+  clarke: require('../assets/clarke.jpg'),
+  clock: require('../assets/clock.jpg'),
+  developable: require('../assets/developable.jpg'),
+  ellipsoid: require('../assets/ellipsoid.png'),
+  eratosthenes: require('../assets/eratosthenes.jpg'),
+  flatEarth: require('../assets/flat-earth.jpg'),
+  geocentric: require('../assets/geocentric-latitude.png'),
   geodetic: require('../assets/geodetic-latitude.png'),
-  geocentric: require('../assets/geocentric-latitude.png')
+  geoid: require('../assets/gravity-anomalies.png'),
+  google: require('../assets/google.jpg'),
+  greenwich: require('../assets/greenwich.jpg'),
+  originalMercator: require('../assets/original-mercator.png'),
+  plumb: require('../assets/plumb.jpg'),
+  rhumb: require('../assets/rhumb.png'),
+  secant: require('../assets/secant.png'),
+  sextant: require('../assets/sextant.jpg'),
+  sphere: require('../assets/sphere.png'),
+  surfaces: require('../assets/surfaces.png'),
+  syene: require('../assets/syene.jpg'),
+  triangulation: require('../assets/triangulation.jpg'),
+  watch: require('../assets/harison-h4.jpg')
 };
+
+for (var key in images) {
+  images[key] = images[key].replace('/', '');
+}
 
 preloader(images);
 
@@ -51,7 +64,7 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide bgImage={images.flatEarth.replace('/', '')}
+          <Slide bgImage={images.flatEarth}
               notes="Babylonian world map, 6th century BCE">
             <Appear fid="1">
               <Heading bgColor="primary" caps padding={15} size={1}>
@@ -60,12 +73,12 @@ export default class Presentation extends React.Component {
             </Appear>
           </Slide>
 
-          <Slide bgImage={images.eratosthenes.replace('/', '')}/>
+          <Slide bgImage={images.eratosthenes}/>
 
-          <Slide bgImage={images.syene.replace('/', '')}
+          <Slide bgImage={images.syene}
               notes="On the summer solstice, the sun casts no shadows in Syene"/>
 
-          <Slide bgImage={images.circumference.replace('/', '')}
+          <Slide bgImage={images.circumference}
               notes="On the same day in Alexandria, there were shadows.  This can be explained by a round earth"/>
 
           <Slide
@@ -88,7 +101,7 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Image src={images.sphere.replace('/', '')}/>
+            <Image src={images.sphere}/>
           </Slide>
 
           <Slide notes="Newton postulated that the earth was ellipsoidal.  The french thought it was shaped like an egg.  Meridian surveys were unleashed.">
@@ -104,10 +117,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Image src={images.triangulation.replace('/', '')} width="50%"/>
+            <Image src={images.triangulation} width="50%"/>
           </Slide>
 
-          <Slide bgImage={images.clarke.replace('/', '')}>
+          <Slide bgImage={images.clarke}>
             <Appear>
               <Text padding={20} textColor="white">
                 solved 920 equations without the use of a calculator
@@ -116,11 +129,11 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Image src={images.ellipsoid.replace('/', '')}/>
+            <Image src={images.ellipsoid}/>
           </Slide>
 
           <Slide bgColor="black" notes="Gravity anomalies.  Mountain ranges create positive anomalies.  Glacial isostatic disequilibrium creates negative anomalies.  Enter the geoid.  Gravity acts perpendicular to this surface.">
-            <Image src={images.geoid.replace('/', '')}/>
+            <Image src={images.geoid}/>
           </Slide>
 
           <Slide>
@@ -144,7 +157,7 @@ export default class Presentation extends React.Component {
                 </Heading>
               </Fill>
               <Fill>
-                <Image src={images.sextant.replace('/', '')}/>
+                <Image src={images.sextant}/>
               </Fill>
             </Layout>
           </Slide>
@@ -162,7 +175,7 @@ export default class Presentation extends React.Component {
                 </Appear>
               </Fill>
               <Fill>
-                <Image src={images.greenwich.replace('/', '')}/>
+                <Image src={images.greenwich}/>
               </Fill>
             </Layout>
           </Slide>
@@ -195,18 +208,18 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
-          <Slide bgImage={images.developable.replace('/', '')}>
+          <Slide bgImage={images.developable}>
             <Heading>
               Developable surfaces
             </Heading>
           </Slide>
 
           <Slide bgColor="white">
-            <Image src={images.surfaces.replace('/', '')} width="95%"/>
+            <Image src={images.surfaces} width="95%"/>
           </Slide>
 
           <Slide bgColor="white">
-            <Image src={images.secant.replace('/', '')} width="95%"/>
+            <Image src={images.secant} width="95%"/>
           </Slide>
 
           <Slide bgColor="white">
@@ -217,7 +230,7 @@ export default class Presentation extends React.Component {
                 </Heading>
               </Fill>
               <Fill>
-                <Image src={images.centralCylindrical.replace('/', '')}/>
+                <Image src={images.centralCylindrical}/>
               </Fill>
             </Layout>
           </Slide>
@@ -258,30 +271,110 @@ export default class Presentation extends React.Component {
 
           <Slide bgColor="white">
             <Heading size={2} textColor="primary">Equirectangular</Heading>
-            <Equirectangular height={512} width={1024}/>
+            <Equirectangular height={512} width={900}/>
             <Text textColor="primary" textSize="1em">
               <code>x = λ · cos φ<sub>1</sub><br/>y = φ</code>
             </Text>
+          </Slide>
+
+          <Slide bgColor="black">
+            <BlockQuote>
+              <Quote>The master of Rupelmonde stands unsurpassed in the history of cartography since the time of Ptolemy.</Quote>
+              <Cite>Nordenskiöld, 1889</Cite>
+            </BlockQuote>
+          </Slide>
+
+          <Slide bgImage={images.originalMercator}>
+            <Appear>
+              <Heading bgColor="primary" padding={25} size={4} textColor="white">
+                New and more complete representation of the terrestrial globe properly adapted for use in navigation
+              </Heading>
+            </Appear>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading padding="20px 0" textColor="primary">straight rhumb lines</Heading>
+            <Image src={images.rhumb} width="95%"/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Layout>
+              <Fill>
+                <Heading margin={20} size={2} textColor="primary">
+                  doesn't work on a boat
+                </Heading>
+              </Fill>
+              <Fill>
+                <Image src={images.clock}/>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Layout>
+              <Fill>
+                <Image src={images.watch}/>
+              </Fill>
+              <Fill>
+                <Heading margin={20} size={2} textColor="primary">
+                  longitude calculation now practical!
+                </Heading>
+                <Text textColor="primary">(1770s)</Text>
+              </Fill>
+            </Layout>
+          </Slide>
+
+          <Slide bgColor="black">
+            <BlockQuote>
+              <Quote>The master of Rupelmonde stands unsurpassed in the history of cartography since the time of Ptolemy.</Quote>
+              <Cite>Nordenskiöld, 1889</Cite>
+            </BlockQuote>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Image src={images.badRap} width="80%"/>
+          </Slide>
+
+          <Slide bgColor="white" notes="Note that Greenland can fit inside of Africa 14 times">
+            <Heading padding="0 0 30px 0" size={2} textColor="primary">Mercator</Heading>
+            <Mercator height={512} width={900}/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading padding="0 0 30px 0" size={2} textColor="primary">Gall-Peters</Heading>
+            <GallPeters height={500} width={900}/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading padding="0 0 30px 0" size={2} textColor="primary">Winkel-Tripel</Heading>
+            <Winkel height={500} width={900}/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Text>non-global projections</Text>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Text>but still, Mercator remains popular</Text>
+          </Slide>
+
+          <Slide>
+            <Heading size={4} textColor="white">Google Maps (2005)</Heading>
+            <Image src={images.google} width="80%"/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Text>XYZ</Text>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Text>standards bodies refused to adopt it, governments warned against it</Text>
           </Slide>
 
           <Slide>
             <Heading>
               An aside on latitude
             </Heading>
-          </Slide>
-
-          <Slide bgColor="white">
-            <Heading margin={20} size={2} textColor="primary">
-              geocentric latitude
-            </Heading>
-            <Image src={images.geocentric.replace('/', '')}/>
-          </Slide>
-
-          <Slide bgColor="white">
-            <Heading margin={20} size={2} textColor="primary">
-              geodetic latitude
-            </Heading>
-            <Image src={images.geodetic.replace('/', '')}/>
           </Slide>
 
           <Slide bgColor="white">
@@ -292,13 +385,60 @@ export default class Presentation extends React.Component {
                 </Heading>
               </Fill>
               <Fill>
-                <Image src={images.plumb.replace('/', '')}/>
+                <Image src={images.plumb}/>
               </Fill>
             </Layout>
             <Text padding={10} textColor="primary" textSize="2em">angle between zenith and known declination of a star</Text>
             <Appear>
               <Text padding={10} textColor="primary" textSize="2em">but plumb is subject to gravitational and centrifugal acceleration</Text>
             </Appear>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading margin={20} size={2} textColor="primary">
+              geodetic latitude
+            </Heading>
+            <Image src={images.geodetic}/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading margin={20} size={2} textColor="primary">
+              geocentric latitude
+            </Heading>
+            <Image src={images.geocentric}/>
+          </Slide>
+
+          <Slide>
+            <Heading>
+              Back to (true) Mercator
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Text>formulas for sphere and ellipsoid</Text>
+          </Slide>
+
+          <Slide>
+            <CodePane lang="javascript" source={require('raw!../assets/epsg-3395.txt')} textSize="0.7em"/>
+          </Slide>
+
+          <Slide>
+            <Heading caps size={2} textColor="white">
+              Pseudo Mercator users spherical development of ellipsoidal coordinates!!
+            </Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>
+              so what?
+            </Heading>
+          </Slide>
+
+          <Slide>
+            <Heading padding={20} size={3} textColor="white">Lessons</Heading>
+            <Appear><Text padding={10} textColor="white">choose a projection that suits your needs</Text></Appear>
+            <Appear><Text padding={10} textColor="white">and don't be afraid to transform your data</Text></Appear>
+            <Appear><Text padding={10} textColor="white">(even in the browser)</Text></Appear>
           </Slide>
 
         </Deck>
