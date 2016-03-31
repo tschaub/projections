@@ -21,13 +21,8 @@ function forward(input, opt_output, opt_dimension) {
 }
 
 function inverse(input, opt_output, opt_dimension) {
-  var output = opt_output || input.slice();
-  var dimension = opt_dimension || 2;
-  for (var i = 0, ii = input.length; i < ii; i += dimension) {
-    output[i] = input[i];
-    output[i + 1] = input[i + 1];
-  }
-  return output;
+  // not implemented
+  return input.slice();
 }
 
 var halfSize = Math.PI * radius;

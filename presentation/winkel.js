@@ -42,7 +42,7 @@ function inverse(input, opt_output, opt_dimension) {
 var halfSize = Math.PI * radius;
 
 var projection = new ol.proj.Projection({
-  code: 'central-cylindrical',
+  code: 'winkel',
   extent: [-halfSize, -halfSize, halfSize, halfSize],
   units: 'm',
   global: true,

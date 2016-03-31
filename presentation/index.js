@@ -30,6 +30,10 @@ const images = {
   geoid: require('../assets/gravity-anomalies.png'),
   google: require('../assets/google.jpg'),
   greenwich: require('../assets/greenwich.jpg'),
+  mercatorSphereForward: require('../assets/mercator-sphere-forward.png'),
+  mercatorSphereInverse: require('../assets/mercator-sphere-inverse.png'),
+  mercatorEllipsoidForward: require('../assets/mercator-ellipsoid-forward.png'),
+  mercatorEllipsoidInverse: require('../assets/mercator-ellipsoid-inverse.png'),
   originalMercator: require('../assets/original-mercator.png'),
   plumb: require('../assets/plumb.jpg'),
   rhumb: require('../assets/rhumb.png'),
@@ -246,26 +250,28 @@ export default class Presentation extends React.Component {
           <Slide>
             <Heading padding={20} size={4} textColor="white">useful characteristics of a projection</Heading>
             <Table textAlign="left" textColor="white">
-              <TableRow>
-                <TableItem padding="10px 20px"><strong>conformal</strong></TableItem>
-                <TableItem padding="10px 20px">isotropic scale, preserves angles</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem padding="10px 20px"><strong>authalic</strong></TableItem>
-                <TableItem padding="10px 20px">point scales in orthogonal directions are inversely proportional, preserves area</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem padding="10px 20px"><strong>equidistant</strong></TableItem>
-                <TableItem padding="10px 20px">constant scale on a set of defined lines</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem padding="10px 20px"><strong>gnomic</strong></TableItem>
-                <TableItem padding="10px 20px">great circles are straight lines</TableItem>
-              </TableRow>
-              <TableRow>
-                <TableItem padding="10px 20px"><strong>azimuthal</strong></TableItem>
-                <TableItem padding="10px 20px">azimuth angles from a point are preserved</TableItem>
-              </TableRow>
+              <tbody>
+                <TableRow>
+                  <TableItem padding="10px 20px"><strong>conformal</strong></TableItem>
+                  <TableItem padding="10px 20px">isotropic scale, preserves angles</TableItem>
+                </TableRow>
+                <TableRow>
+                  <TableItem padding="10px 20px"><strong>authalic</strong></TableItem>
+                  <TableItem padding="10px 20px">point scales in orthogonal directions are inversely proportional, preserves area</TableItem>
+                </TableRow>
+                <TableRow>
+                  <TableItem padding="10px 20px"><strong>equidistant</strong></TableItem>
+                  <TableItem padding="10px 20px">constant scale on a set of defined lines</TableItem>
+                </TableRow>
+                <TableRow>
+                  <TableItem padding="10px 20px"><strong>gnomic</strong></TableItem>
+                  <TableItem padding="10px 20px">great circles are straight lines</TableItem>
+                </TableRow>
+                <TableRow>
+                  <TableItem padding="10px 20px"><strong>azimuthal</strong></TableItem>
+                  <TableItem padding="10px 20px">azimuth angles from a point are preserved</TableItem>
+                </TableRow>
+              </tbody>
             </Table>
           </Slide>
 
@@ -354,8 +360,8 @@ export default class Presentation extends React.Component {
             <Text>non-global projections</Text>
           </Slide>
 
-          <Slide bgColor="white">
-            <Text>but still, Mercator remains popular</Text>
+          <Slide>
+            <Heading>So why is Mercator so ubiquitous?</Heading>
           </Slide>
 
           <Slide>
@@ -363,12 +369,19 @@ export default class Presentation extends React.Component {
             <Image src={images.google} width="80%"/>
           </Slide>
 
-          <Slide bgColor="white">
-            <Text>XYZ</Text>
+          <Slide>
+            <Heading>mysterious projection</Heading>
           </Slide>
 
           <Slide bgColor="white">
-            <Text>standards bodies refused to adopt it, governments warned against it</Text>
+            <Heading textColor="primary">Mercator meets Pseudo Mercator</Heading>
+          </Slide>
+
+          <Slide>
+            <Heading>EPSG:900913</Heading>
+            <Text padding={10} textColor="white">standards bodies refused to adopt it,</Text>
+            <Appear><Text padding={10} textColor="white">governments warned against it,</Text></Appear>
+            <Appear><Text padding={10} textColor="white">everybody wanted it</Text></Appear>
           </Slide>
 
           <Slide>
@@ -414,8 +427,32 @@ export default class Presentation extends React.Component {
             </Heading>
           </Slide>
 
+          <Slide>
+            <Heading>
+              Equations for Normal Mercator on a sphere
+            </Heading>
+          </Slide>
+
           <Slide bgColor="white">
-            <Text>formulas for sphere and ellipsoid</Text>
+            <Image src={images.mercatorSphereForward} width="80%"/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Image src={images.mercatorSphereInverse}/>
+          </Slide>
+
+          <Slide>
+            <Heading>
+              Equations for Normal Mercator on an ellipsoid
+            </Heading>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Image src={images.mercatorEllipsoidForward}/>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Image src={images.mercatorEllipsoidInverse}/>
           </Slide>
 
           <Slide>
