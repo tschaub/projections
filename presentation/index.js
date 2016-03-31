@@ -1,8 +1,12 @@
 import React from 'react';
 import Equirectangular from './equirectangular';
+import CentralCylindrical from './central-cylindrical';
 import createTheme from 'spectacle/lib/themes/default';
 import preloader from 'spectacle/lib/utils/preloader';
-import {Appear, BlockQuote, Cite, CodePane, Deck, Fill, Heading, Image, Layout, Quote, Slide, Spectacle, Text} from 'spectacle';
+import {
+  Appear, BlockQuote, Cite, CodePane, Deck, Fill, Heading, Image, Layout, Quote,
+  Slide, Spectacle, Table, TableItem, TableRow, Text
+} from 'spectacle';
 
 // Require CSS
 require('normalize.css');
@@ -216,6 +220,40 @@ export default class Presentation extends React.Component {
                 <Image src={images.centralCylindrical.replace('/', '')}/>
               </Fill>
             </Layout>
+          </Slide>
+
+          <Slide bgColor="white">
+            <Heading size={2} textColor="primary">Central Cylindrical</Heading>
+            <CentralCylindrical height={512} width={1024}/>
+            <Text textColor="primary" textSize="1em">
+              <code>x = λ · cos φ<sub>1</sub><br/>y = tan φ</code>
+            </Text>
+          </Slide>
+
+          <Slide>
+            <Heading padding={20} size={4} textColor="white">useful characteristics of a projection</Heading>
+            <Table textAlign="left" textColor="white">
+              <TableRow>
+                <TableItem padding="10px 20px"><strong>conformal</strong></TableItem>
+                <TableItem padding="10px 20px">isotropic scale, preserves angles</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem padding="10px 20px"><strong>authalic</strong></TableItem>
+                <TableItem padding="10px 20px">point scales in orthogonal directions are inversely proportional, preserves area</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem padding="10px 20px"><strong>equidistant</strong></TableItem>
+                <TableItem padding="10px 20px">constant scale on a set of defined lines</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem padding="10px 20px"><strong>gnomic</strong></TableItem>
+                <TableItem padding="10px 20px">great circles are straight lines</TableItem>
+              </TableRow>
+              <TableRow>
+                <TableItem padding="10px 20px"><strong>azimuthal</strong></TableItem>
+                <TableItem padding="10px 20px">azimuth angles from a point are preserved</TableItem>
+              </TableRow>
+            </Table>
           </Slide>
 
           <Slide bgColor="white">
