@@ -271,22 +271,10 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Layout>
-              <Fill>
-                <Heading margin={20} size={2} textColor="primary">
-                  astronomical latitude
-                </Heading>
-              </Fill>
-              <Fill>
-                <Image src={images.plumb.replace('/', '')}/>
-              </Fill>
-            </Layout>
-            <Appear>
-              <Text padding={10} textColor="primary" textSize="2em">angle between zenith and known declination of a star</Text>
-            </Appear>
-            <Appear>
-              <Text padding={10} textColor="primary" textSize="2em">but plumb is subject to gravitational and centrifugal acceleration</Text>
-            </Appear>
+            <Heading margin={20} size={2} textColor="primary">
+              geocentric latitude
+            </Heading>
+            <Image src={images.geocentric.replace('/', '')}/>
           </Slide>
 
           <Slide bgColor="white">
@@ -297,10 +285,20 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Heading margin={20} size={2} textColor="primary">
-              geocentric latitude
-            </Heading>
-            <Image src={images.geocentric.replace('/', '')}/>
+            <Layout>
+              <Fill>
+                <Heading margin={20} size={2} textColor="primary">
+                  astronomical latitude
+                </Heading>
+              </Fill>
+              <Fill>
+                <Image src={images.plumb.replace('/', '')}/>
+              </Fill>
+            </Layout>
+            <Text padding={10} textColor="primary" textSize="2em">angle between zenith and known declination of a star</Text>
+            <Appear>
+              <Text padding={10} textColor="primary" textSize="2em">but plumb is subject to gravitational and centrifugal acceleration</Text>
+            </Appear>
           </Slide>
 
         </Deck>
