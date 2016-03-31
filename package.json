@@ -12,12 +12,14 @@
   },
   "license": "MIT",
   "dependencies": {
+    "d3": "^3.5.16",
     "normalize.css": "3.0.3",
     "planet-maps": "5.0.0-beta.1",
     "proj4": "^2.3.14",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "spectacle": "^1.0.0"
+    "spectacle": "^1.0.0",
+    "topojson": "^1.6.24"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",

@@ -104,7 +104,8 @@ const WinkelTripel = React.createClass({
               color: '#009da5'
             }),
             stroke: new ol.style.Stroke({
-              color: '#009da5'
+              color: '#fff',
+              width: 0.5
             })
           })
         }),

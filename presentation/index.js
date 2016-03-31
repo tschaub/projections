@@ -2,6 +2,8 @@ import React from 'react';
 import Equirectangular from './equirectangular';
 import CentralCylindrical from './central-cylindrical';
 import GallPeters from './gall-peters';
+import TransverseMercator from './transverse-mercator';
+import PseudoMercator from './pseudo-mercator';
 import Mercator from './mercator';
 import Winkel from './winkel';
 import createTheme from 'spectacle/lib/themes/default';
@@ -357,7 +359,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Text>non-global projections</Text>
+            <Heading padding="0 0 30px 0" size={2} textColor="primary">Transverse Mercator</Heading>
+            <TransverseMercator height={500} width={900}/>
           </Slide>
 
           <Slide>
@@ -374,7 +377,8 @@ export default class Presentation extends React.Component {
           </Slide>
 
           <Slide bgColor="white">
-            <Heading textColor="primary">Mercator meets Pseudo Mercator</Heading>
+            <Heading size={2} textColor="primary">Mercator meets Pseudo</Heading>
+            <PseudoMercator height={500} width={900}/>
           </Slide>
 
           <Slide>

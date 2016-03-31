@@ -55,7 +55,8 @@ const Equirectangular = React.createClass({
               color: '#009da5'
             }),
             stroke: new ol.style.Stroke({
-              color: '#009da5'
+              color: '#fff',
+              width: 0.5
             })
           })
         }),
@@ -69,9 +70,9 @@ const Equirectangular = React.createClass({
 
     var graticule = new ol.Graticule({
       strokeStyle: new ol.style.Stroke({
-        color: 'white',
-        width: 2,
-        lineDash: [0.5, 4]
+        color: 'rgba(0,0,0,0.5)',
+        width: 0.5,
+        lineDash: [2, 4]
       })
     });
     graticule.setMap(map);
