@@ -465,7 +465,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading caps size={2} textColor="white">
-              Pseudo Mercator uses spherical development of ellipsoidal coordinates!!
+              Pseudo Mercator uses <em>spherical development</em> of <em>ellipsoidal coordinates</em> !!
             </Heading>
           </Slide>
 
