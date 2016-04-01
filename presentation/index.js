@@ -385,7 +385,7 @@ export default class Presentation extends React.Component {
             <Heading>EPSG:900913</Heading>
             <Text padding={10} textColor="white">standards bodies refused to adopt it,</Text>
             <Appear><Text padding={10} textColor="white">governments warned against it,</Text></Appear>
-            <Appear><Text padding={10} textColor="white">everybody wanted it</Text></Appear>
+            <Appear><Text padding={10} textColor="white"><strong>everybody wanted it</strong></Text></Appear>
           </Slide>
 
           <Slide>
@@ -465,7 +465,7 @@ export default class Presentation extends React.Component {
 
           <Slide>
             <Heading caps size={2} textColor="white">
-              Pseudo Mercator users spherical development of ellipsoidal coordinates!!
+              Pseudo Mercator uses spherical development of ellipsoidal coordinates!!
             </Heading>
           </Slide>
 
